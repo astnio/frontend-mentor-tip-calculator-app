@@ -1,0 +1,24 @@
+@font-face {
+	font-family: 'Space Mono';
+	src: url('./fonts/Space_Mono/SpaceMono-Bold.ttf');
+	font-weight: 700;
+}
+
+:root {
+	--clr-primary: hsl(172, 67%, 45%);
+
+	--clr-white: hsl(0, 0%, 100%);
+
+	--clr-cyan-400: hsl(183, 100%, 15%);
+	--clr-cyan-300: hsl(186, 14%, 43%);
+	--clr-cyan-200: hsl(184, 14%, 56%);
+	--clr-cyan-100: hsl(185, 41%, 84%);
+	--clr-cyan-50: hsl(189, 41%, 97%);
+
+	font-size: 24px;
+	font-weight: 700;
+}
+
+body {
+	font-family: 'Space Mono', monospace;
+}
