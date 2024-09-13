@@ -15,10 +15,90 @@
 	--clr-cyan-100: hsl(185, 41%, 84%);
 	--clr-cyan-50: hsl(189, 41%, 97%);
 
+	--border-radius: 20px;
+
 	font-size: 24px;
 	font-weight: 700;
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
 	font-family: 'Space Mono', monospace;
+
+	margin: 0;
+	min-height: 100dvh;
+
+	background-color: var(--clr-cyan-100);
+}
+
+main {
+	display: flex;
+	gap: 1rem;
+
+	padding: 1rem;
+
+	border-radius: var(--border-radius);
+
+	background-color: var(--clr-white);
+
+	min-width: 32rem;
+}
+
+/*** Form ***/
+
+form#tip-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1rem;
+
+	width: 100%;
+	max-width: 50%;
+
+	font-size: 0.5rem;
+}
+
+.frm-bill-amount-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.frm-tip-choice-container {
+	display: flex;
+
+	width: 100%;
+}
+
+.frm-tip-choice-container > fieldset {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+
+	width: 100%;
+}
+
+.frm-people-amount-container {
+	display: flex;
+	flex-direction: column;
+}
+
+/*** Output ***/
+
+.output-container {
+	display: flex;
+	flex-direction: column;
+
+	width: 100%;
+	max-width: 50%;
+
+	padding: 1rem;
+
+	border-radius: calc(var(--border-radius) / 1.5);
+
+	background-color: var(--clr-cyan-400);
+
+	color: var(--clr-white);
 }

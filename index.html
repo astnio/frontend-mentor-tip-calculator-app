@@ -30,7 +30,9 @@
 			</div>
 		</header>
 		<main>
-			<form action="">
+			<form
+				id="tip-form"
+				action="">
 				<div class="frm-bill-amount-container">
 					<label for="bill-amount">Bill</label>
 					<input
@@ -40,6 +42,7 @@
 				</div>
 				<div class="frm-tip-choice-container">
 					<fieldset>
+						<legend>Select Tip %</legend>
 						<div>
 							<input
 								type="radio"
@@ -93,7 +96,7 @@
 				</div>
 			</form>
 
-			<div>
+			<div class="output-container">
 				<div>
 					<p>
 						<span>Tip Amount</span>
