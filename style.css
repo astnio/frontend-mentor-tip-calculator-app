@@ -22,7 +22,8 @@
 	--clr-cyan-100: hsl(185, 41%, 84%);
 	--clr-cyan-50: hsl(189, 41%, 97%);
 
-	--border-radius: 20px;
+	--border-radius-general: 20px;
+	--border-radius-input: 5px;
 
 	font-size: 24px;
 	font-weight: 700;
@@ -48,7 +49,7 @@ main {
 
 	padding: 1rem;
 
-	border-radius: var(--border-radius);
+	border-radius: var(--border-radius-general);
 
 	background-color: var(--clr-white);
 
@@ -130,7 +131,7 @@ form#tip-form {
 
 	background-color: var(--clr-cyan-400);
 
-	border-radius: 3px;
+	border-radius: var(--border-radius-input);
 	z-index: -1;
 
 	transition: background-color 0.15s ease-out;
@@ -172,7 +173,7 @@ form#tip-form {
 	height: 100%;
 
 	border: none;
-	border-radius: 3px;
+	border-radius: var(--border-radius-input);
 
 	z-index: -1;
 
