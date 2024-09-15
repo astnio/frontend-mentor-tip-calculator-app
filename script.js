@@ -1,5 +1,8 @@
 const tipForm = document.querySelector('#tip-form');
 
+const tipValueRadioInputs = document.querySelectorAll(
+	'.frm-tip-choice-input-rdo'
+);
 const customTipInputContainer = document.querySelector(
 	'.frm-tip-choice-custom-input-container'
 );
@@ -14,4 +17,10 @@ customTipInput.addEventListener('input', () => {
 		customTipLabel.style.display = 'block';
 		customTipInput.classList.remove('has-value');
 	}
+});
+
+customTipInput.addEventListener('click', () => {
+	tipValueRadioInputs.forEach((rdoBtn) => {
+		rdoBtn.checked = false;
+	});
 });
