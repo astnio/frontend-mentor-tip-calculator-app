@@ -287,4 +287,23 @@ input.frm-tip-choice-input-custom[type='number'] {
 
 #btn-reset {
 	margin-top: auto;
+
+	font-family: 'Space Mono', monospace;
+	text-transform: uppercase;
+	color: var(--clr-cyan-400);
+	font-size: 0.8rem;
+
+	background-color: var(--clr-primary);
+
+	padding: 0.4rem;
+
+	border: none;
+	border-radius: var(--border-radius-input);
+
+	transition: background-color 0.15s ease-out;
+}
+
+#btn-reset:hover {
+	background-color: var(--clr-hover);
+	cursor: pointer;
 }
