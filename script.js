@@ -9,12 +9,25 @@ const customTipInputContainer = document.querySelector(
 const customTipLabel = customTipInputContainer.querySelector('label');
 const customTipInput = customTipInputContainer.querySelector('input');
 
+const btnReset = document.getElementById('btn-reset');
+
+function resetCustomInputStyle() {
+	customTipInput.value = '';
+	customTipInput.classList.remove('has-value');
+}
+
+function resetAllInput() {
+	resetCustomInputStyle();
+
+	tipValueRadioInputs.forEach((rdoBtn) => {
+		rdoBtn.checked = false;
+	});
+}
+
 customTipInput.addEventListener('input', () => {
 	if (customTipInput.value) {
-		customTipLabel.style.display = 'none';
 		customTipInput.classList.add('has-value');
 	} else {
-		customTipLabel.style.display = 'block';
 		customTipInput.classList.remove('has-value');
 	}
 });
@@ -25,12 +38,8 @@ customTipInput.addEventListener('click', () => {
 	});
 });
 
+btnReset.addEventListener('click', resetAllInput);
+
 tipValueRadioInputs.forEach((rdoBtn) => {
 	rdoBtn.addEventListener('click', resetCustomInputStyle);
 });
-
-function resetCustomInputStyle() {
-	customTipInput.value = '';
-	customTipInput.classList.remove('has-value');
-	customTipLabel.style.display = 'block';
-}
