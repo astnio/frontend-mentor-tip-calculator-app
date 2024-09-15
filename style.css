@@ -10,6 +10,17 @@
 	box-sizing: border-box;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+	padding: 0;
+}
+
 :root {
 	--clr-primary: hsl(172, 67%, 45%);
 	--clr-hover: #9ee7de;
@@ -54,6 +65,7 @@ main {
 	background-color: var(--clr-white);
 
 	min-width: 36rem;
+	min-height: 16rem;
 }
 
 /*** Form ***/
@@ -229,15 +241,50 @@ input.frm-tip-choice-input-custom[type='number'] {
 .output-container {
 	display: flex;
 	flex-direction: column;
+	gap: 1rem;
 
 	width: 100%;
 	max-width: 50%;
 
 	padding: 1rem;
 
-	border-radius: calc(var(--border-radius) / 1.5);
+	border-radius: calc(var(--border-radius-general) / 1.5);
 
 	background-color: var(--clr-cyan-400);
 
 	color: var(--clr-white);
+}
+
+.paragraph {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: end;
+}
+
+.paragraph-title {
+	font-size: 0.6rem;
+	color: var(--clr-cyan-50);
+
+	margin: 0;
+	padding: 0;
+}
+
+.paragraph-hint {
+	align-self: self-start;
+	font-size: 0.5rem;
+	color: var(--clr-cyan-200);
+
+	margin: 0;
+	padding: 0;
+}
+
+.total-cost {
+	grid-column: 2;
+	grid-row: 1 / span 2;
+	font-size: 2rem;
+	color: var(--clr-primary);
+}
+
+#btn-reset {
+	margin-top: auto;
 }
