@@ -24,3 +24,13 @@ customTipInput.addEventListener('click', () => {
 		rdoBtn.checked = false;
 	});
 });
+
+tipValueRadioInputs.forEach((rdoBtn) => {
+	rdoBtn.addEventListener('click', resetCustomInputStyle);
+});
+
+function resetCustomInputStyle() {
+	customTipInput.value = '';
+	customTipInput.classList.remove('has-value');
+	customTipLabel.style.display = 'block';
+}
