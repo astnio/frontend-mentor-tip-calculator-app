@@ -318,3 +318,21 @@ input.frm-tip-choice-input-custom[type='number'] {
 	background-color: var(--clr-hover);
 	cursor: pointer;
 }
+
+/*** Mobile ***/
+
+@media screen and (max-width: 890px) {
+	main {
+		flex-direction: column;
+		min-width: auto;
+		min-height: auto;
+	}
+
+	form#tip-form {
+		max-width: 100%;
+	}
+
+	.output-container {
+		max-width: 100%;
+	}
+}
