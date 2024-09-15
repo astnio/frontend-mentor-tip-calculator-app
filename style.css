@@ -247,6 +247,19 @@ input.frm-tip-choice-input-custom[type='number'] {
 	flex-direction: column;
 }
 
+.number-input {
+	border: none;
+	border-radius: var(--border-radius-input);
+
+	background-color: var(--clr-cyan-50);
+	padding: 0.2rem;
+
+	font-size: 1rem;
+	font-family: 'Space Mono', monospace;
+	font-weight: 700;
+	color: var(--clr-cyan-400);
+}
+
 /*** Output ***/
 
 .output-container {
