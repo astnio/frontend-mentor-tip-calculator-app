@@ -51,7 +51,7 @@ main {
 
 	background-color: var(--clr-white);
 
-	min-width: 32rem;
+	min-width: 36rem;
 }
 
 /*** Form ***/
@@ -82,28 +82,66 @@ form#tip-form {
 }
 
 .frm-tip-choice-container > fieldset {
+	position: relative;
+
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	gap: 0.6rem;
 
 	padding: 0;
 	margin: 0;
 	border: none;
 
 	width: 100%;
+	height: 100%;
+}
+
+.frm-tip-choice-container > fieldset > legend {
+	margin-bottom: 0.5rem;
+}
+
+.frm-tip-choice-input-container {
+	position: relative;
+	isolation: isolate;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.frm-tip-choice-label {
+	padding-block: 0.4rem;
+
+	color: var(--clr-white);
+	font-size: 1rem;
+
+	transition: color 0.15s ease-out;
+	pointer-events: none;
 }
 
 .frm-tip-choice-input {
-	position: relative;
+	position: absolute;
+	appearance: none;
+
 	margin: 0;
-	padding: 0;
-	display: none;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--clr-cyan-400);
+
+	border-radius: 3px;
+	z-index: -1;
+
+	transition: background-color 0.15s ease-out;
 }
 
-.frm-tip-choice-input::before {
-	position: absolute;
-	width: 1rem;
-	height: 1rem;
-	background-color: skyblue;
+.frm-tip-choice-input-container:hover > .frm-tip-choice-input {
+	background-color: var(--clr-primary);
+	cursor: pointer;
+}
+
+.frm-tip-choice-input-container:hover > .frm-tip-choice-label {
+	color: var(--clr-cyan-400);
 }
 
 /*** Form --- Other ***/
