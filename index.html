@@ -18,6 +18,10 @@
 		<link
 			rel="stylesheet"
 			href="style.css" />
+
+		<script
+			defer
+			src="script.js"></script>
 	</head>
 	<body>
 		<header>
@@ -45,7 +49,7 @@
 						<legend>Select Tip %</legend>
 						<div class="frm-tip-choice-input-container">
 							<input
-								class="frm-tip-choice-input"
+								class="frm-tip-choice-input-rdo"
 								type="radio"
 								name="tip-value"
 								id="tip-05" />
@@ -57,7 +61,7 @@
 						</div>
 						<div class="frm-tip-choice-input-container">
 							<input
-								class="frm-tip-choice-input"
+								class="frm-tip-choice-input-rdo"
 								type="radio"
 								name="tip-value"
 								id="tip-10" />
@@ -69,7 +73,7 @@
 						</div>
 						<div class="frm-tip-choice-input-container">
 							<input
-								class="frm-tip-choice-input"
+								class="frm-tip-choice-input-rdo"
 								type="radio"
 								name="tip-value"
 								id="tip-15" />
@@ -81,7 +85,7 @@
 						</div>
 						<div class="frm-tip-choice-input-container">
 							<input
-								class="frm-tip-choice-input"
+								class="frm-tip-choice-input-rdo"
 								type="radio"
 								name="tip-value"
 								id="tip-20" />
@@ -93,7 +97,7 @@
 						</div>
 						<div class="frm-tip-choice-input-container">
 							<input
-								class="frm-tip-choice-input"
+								class="frm-tip-choice-input-rdo"
 								type="radio"
 								name="tip-value"
 								id="tip-25" />
@@ -103,19 +107,20 @@
 								>25%</label
 							>
 						</div>
-						<div class="frm-tip-choice-input-container">
+						<div
+							class="frm-tip-choice-input-container frm-tip-choice-custom-input-container">
 							<input
-								class="frm-tip-choice-input"
-								type="radio"
-								name="tip-value"
-								id="tip-custom" />
+								class="frm-tip-choice-input-custom"
+								type="number"
+								step="1"
+								min="0"
+								max="999" />
 							<label
-								class="frm-tip-choice-label"
+								class="frm-tip-choice-label frm-tip-custom-choice-label"
 								for="tip-custom"
 								>Custom</label
 							>
 							<!--Show input below when the radio button above is selected-->
-							<input style="display: none" />
 						</div>
 					</fieldset>
 				</div>

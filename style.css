@@ -118,7 +118,7 @@ form#tip-form {
 	pointer-events: none;
 }
 
-.frm-tip-choice-input {
+.frm-tip-choice-input-rdo {
 	position: absolute;
 	appearance: none;
 
@@ -135,15 +135,70 @@ form#tip-form {
 	transition: background-color 0.15s ease-out;
 }
 
-.frm-tip-choice-input-container:hover > .frm-tip-choice-input,
-.frm-tip-choice-input:checked {
+.frm-tip-choice-input-container:hover > .frm-tip-choice-input-rdo,
+.frm-tip-choice-input-rdo:checked {
 	background-color: var(--clr-primary);
 	cursor: pointer;
 }
 
 .frm-tip-choice-input-container:hover > .frm-tip-choice-label,
-.frm-tip-choice-input-container:has(.frm-tip-choice-input:checked)
+.frm-tip-choice-input-container:has(.frm-tip-choice-input-rdo:checked)
 	> .frm-tip-choice-label {
+	color: var(--clr-cyan-400);
+}
+
+/*** Custom Tip Input ***/
+
+.frm-tip-choice-input-custom {
+	position: absolute;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--clr-white);
+	text-align: center;
+
+	background-color: var(--clr-cyan-400);
+
+	width: 100%;
+	height: 100%;
+
+	border: none;
+	border-radius: 3px;
+
+	z-index: -1;
+
+	transition: background-color 0.15s ease-out, color 0.15s ease-out;
+}
+
+input.frm-tip-choice-input-custom::-webkit-outer-spin-button,
+input.frm-tip-choice-input-custom::-webkit-inner-spin-button {
+	appearance: none;
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input.frm-tip-choice-input-custom[type='number'] {
+	appearance: textfield;
+	-moz-appearance: textfield;
+	border: none;
+}
+
+.frm-tip-choice-input-custom:hover,
+.frm-tip-choice-input-custom:focus,
+.frm-tip-choice-input-custom.has-value {
+	cursor: pointer;
+	background-color: var(--clr-primary);
+	color: var(--clr-cyan-400);
+}
+
+.frm-tip-choice-custom-input-container:has(.frm-tip-choice-input-custom:hover)
+	> .frm-tip-custom-choice-label,
+.frm-tip-choice-custom-input-container:has(.frm-tip-choice-input-custom:focus)
+	> .frm-tip-custom-choice-label {
 	color: var(--clr-cyan-400);
 }
 
