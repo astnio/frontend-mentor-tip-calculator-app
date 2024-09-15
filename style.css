@@ -73,6 +73,8 @@ form#tip-form {
 	flex-direction: column;
 }
 
+/*** Form --- Radio Buttons ***/
+
 .frm-tip-choice-container {
 	display: flex;
 
@@ -103,6 +105,8 @@ form#tip-form {
 	height: 1rem;
 	background-color: skyblue;
 }
+
+/*** Form --- Other ***/
 
 .frm-people-amount-container {
 	display: flex;
