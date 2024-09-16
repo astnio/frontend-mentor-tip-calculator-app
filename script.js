@@ -91,7 +91,13 @@ function updateOutputs() {
 
 // *** Event Listeners *** //
 
-billInput.addEventListener('input', updateOutputs);
+billInput.addEventListener('input', () => {
+	updateOutputs();
+});
+
+billInput.addEventListener('blur', () => {
+	billInput.value = parseFloat(billInput.value).toFixed(2);
+});
 
 btnReset.addEventListener('click', resetAllInput);
 
