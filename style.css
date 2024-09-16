@@ -56,6 +56,10 @@ body {
 	background-color: var(--clr-cyan-100);
 }
 
+header {
+	margin-bottom: 4rem;
+}
+
 main {
 	display: flex;
 	gap: 1rem;
@@ -271,6 +275,7 @@ input.frm-tip-choice-input-custom[type='number'] {
 
 	border: none;
 	border-radius: var(--border-radius-input);
+	outline: 0px solid white;
 
 	background-color: var(--clr-cyan-50);
 	padding: 0.2rem;
@@ -281,6 +286,17 @@ input.frm-tip-choice-input-custom[type='number'] {
 	font-family: 'Space Mono', monospace;
 	font-weight: 700;
 	color: var(--clr-cyan-400);
+
+	transition: outline 0.15s ease-out;
+}
+
+.number-input:hover {
+	cursor: pointer;
+	outline: 3px solid var(--clr-primary);
+}
+
+.number-input:focus {
+	outline: 3px solid var(--clr-primary);
 }
 
 .number-input::placeholder {
@@ -382,6 +398,10 @@ input.frm-tip-choice-input-custom[type='number'] {
 /*** Mobile ***/
 
 @media screen and (max-width: 890px) {
+	header {
+		margin-bottom: 1rem;
+	}
+
 	main {
 		flex-direction: column;
 		min-width: auto;
@@ -390,6 +410,7 @@ input.frm-tip-choice-input-custom[type='number'] {
 
 	form#tip-form {
 		max-width: 100%;
+		gap: 1rem;
 	}
 
 	.output-container {
@@ -398,5 +419,9 @@ input.frm-tip-choice-input-custom[type='number'] {
 
 	.total-cost {
 		font-size: 1.4rem;
+	}
+
+	.frm-tip-choice-container > fieldset {
+		grid-template-columns: 1fr 1fr;
 	}
 }
