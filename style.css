@@ -76,7 +76,7 @@ form#tip-form {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	gap: 1rem;
+	gap: 1.8rem;
 
 	width: 100%;
 	max-width: 50%;

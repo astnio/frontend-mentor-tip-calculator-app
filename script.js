@@ -1,4 +1,6 @@
-const tipForm = document.querySelector('#tip-form');
+// *** Inputs *** //
+
+const billInput = document.getElementById('bill-amount');
 
 const tipValueRadioInputs = document.querySelectorAll(
 	'.frm-tip-choice-input-rdo'
@@ -14,7 +16,18 @@ const numberOfPeopleInputErrorLabel = document.querySelector(
 	'.people-amount-error-message'
 );
 
+// *** Output *** //
+
+const outputTotalTipPerPerson = document.getElementById('total-tip-per-person');
+const outputTotalCostPerPerson = document.getElementById(
+	'total-cost-per-person'
+);
+
+// *** Global Variables *** //
+
 const btnReset = document.getElementById('btn-reset');
+
+// *** Functions *** //
 
 function resetCustomInputStyle() {
 	customTipInput.value = '';
@@ -27,7 +40,60 @@ function resetAllInput() {
 	tipValueRadioInputs.forEach((rdoBtn) => {
 		rdoBtn.checked = false;
 	});
+	customTipInput.value = '';
+	numberOfPeopleInput.value = '';
+	billInput.value = '';
+	updateOutputs();
 }
+
+function getTipAmount(bill, tipPerceant, numPeople) {
+	return (bill * tipPerceant) / Number(numPeople);
+}
+
+function getTotal(bill, tipPerceant, numPeople) {
+	const tip = Number(bill) * Number(tipPerceant);
+	const billPlusTip = Number(bill) + Number(tip);
+	return Number(billPlusTip) / Number(numPeople);
+}
+
+function getTipPerceant() {
+	let finalValue = 0;
+
+	if (!customTipInput.value) {
+		tipValueRadioInputs.forEach((rdoBtn) => {
+			if (rdoBtn.checked) {
+				finalValue = rdoBtn.value;
+			}
+		});
+	} else if (customTipInput.value) {
+		finalValue = customTipInput.value / 100;
+	}
+
+	return finalValue;
+}
+
+function updateOutputs() {
+	let bill = billInput.value ? billInput.value : 0;
+	let tip = getTipPerceant();
+	let people = numberOfPeopleInput.value ? numberOfPeopleInput.value : 1;
+
+	const total = parseFloat(
+		getTotal(Number(bill), Number(tip), Number(people))
+	).toFixed(2);
+
+	const tipTotal = parseFloat(
+		getTipAmount(Number(bill), Number(tip), Number(people))
+	).toFixed(2);
+
+	outputTotalTipPerPerson.innerText = `$${tipTotal}`;
+	outputTotalCostPerPerson.innerText = `$${total}`;
+}
+
+// *** Event Listeners *** //
+
+billInput.addEventListener('input', updateOutputs);
+
+btnReset.addEventListener('click', resetAllInput);
 
 customTipInput.addEventListener('input', () => {
 	if (customTipInput.value) {
@@ -35,12 +101,7 @@ customTipInput.addEventListener('input', () => {
 	} else {
 		customTipInput.classList.remove('has-value');
 	}
-});
-
-customTipInput.addEventListener('click', () => {
-	tipValueRadioInputs.forEach((rdoBtn) => {
-		rdoBtn.checked = false;
-	});
+	updateOutputs();
 });
 
 numberOfPeopleInput.addEventListener('input', () => {
@@ -51,10 +112,20 @@ numberOfPeopleInput.addEventListener('input', () => {
 		numberOfPeopleInput.classList.add('input-error');
 		numberOfPeopleInputErrorLabel.style.display = 'block';
 	}
+	updateOutputs();
 });
 
-btnReset.addEventListener('click', resetAllInput);
+// *** Iterable Event Listeners *** //
+
+customTipInput.addEventListener('click', () => {
+	tipValueRadioInputs.forEach((rdoBtn) => {
+		rdoBtn.checked = false;
+	});
+});
 
 tipValueRadioInputs.forEach((rdoBtn) => {
-	rdoBtn.addEventListener('click', resetCustomInputStyle);
+	rdoBtn.addEventListener('click', () => {
+		resetCustomInputStyle();
+		updateOutputs();
+	});
 });
