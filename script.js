@@ -44,6 +44,7 @@ function resetAllInput() {
 	numberOfPeopleInput.value = '';
 	billInput.value = '';
 	updateOutputs();
+	btnReset.disabled = true;
 }
 
 function getTipAmount(bill, tipPerceant, numPeople) {
@@ -87,6 +88,8 @@ function updateOutputs() {
 
 	outputTotalTipPerPerson.innerText = `$${tipTotal}`;
 	outputTotalCostPerPerson.innerText = `$${total}`;
+
+	btnReset.disabled = false;
 }
 
 // *** Event Listeners *** //

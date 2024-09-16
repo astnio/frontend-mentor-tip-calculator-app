@@ -370,6 +370,15 @@ input.frm-tip-choice-input-custom[type='number'] {
 	cursor: pointer;
 }
 
+#btn-reset:disabled {
+	opacity: 40%;
+	cursor: default;
+}
+
+#btn-reset:disabled:hover {
+	background-color: var(--clr-primary);
+}
+
 /*** Mobile ***/
 
 @media screen and (max-width: 890px) {
@@ -385,5 +394,9 @@ input.frm-tip-choice-input-custom[type='number'] {
 
 	.output-container {
 		max-width: 100%;
+	}
+
+	.total-cost {
+		font-size: 1.4rem;
 	}
 }
