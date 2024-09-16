@@ -314,6 +314,11 @@ input.frm-tip-choice-input-custom[type='number'] {
 	margin: 0;
 }
 
+.number-input {
+	appearance: textfield;
+	-moz-appearance: textfield;
+}
+
 /*** Output ***/
 
 .output-container {
