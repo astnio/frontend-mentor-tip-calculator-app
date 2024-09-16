@@ -110,10 +110,6 @@ form#tip-form {
 	height: 100%;
 }
 
-.frm-tip-choice-container > fieldset > legend {
-	margin-bottom: 0.5rem;
-}
-
 .frm-tip-choice-input-container {
 	position: relative;
 	isolation: isolate;
@@ -241,6 +237,13 @@ input.frm-tip-choice-input-custom[type='number'] {
 } */
 
 /*** Form --- Other ***/
+
+.input-legend {
+	font-size: 0.6rem;
+	color: var(--clr-cyan-300);
+
+	margin-bottom: 0.4rem;
+}
 
 .frm-people-amount-container {
 	display: flex;
