@@ -9,6 +9,11 @@ const customTipInputContainer = document.querySelector(
 const customTipLabel = customTipInputContainer.querySelector('label');
 const customTipInput = customTipInputContainer.querySelector('input');
 
+const numberOfPeopleInput = document.getElementById('people-amount');
+const numberOfPeopleInputErrorLabel = document.querySelector(
+	'.people-amount-error-message'
+);
+
 const btnReset = document.getElementById('btn-reset');
 
 function resetCustomInputStyle() {
@@ -36,6 +41,16 @@ customTipInput.addEventListener('click', () => {
 	tipValueRadioInputs.forEach((rdoBtn) => {
 		rdoBtn.checked = false;
 	});
+});
+
+numberOfPeopleInput.addEventListener('input', () => {
+	if (numberOfPeopleInput.value >= 1) {
+		numberOfPeopleInput.classList.remove('input-error');
+		numberOfPeopleInputErrorLabel.style.display = 'none';
+	} else {
+		numberOfPeopleInput.classList.add('input-error');
+		numberOfPeopleInputErrorLabel.style.display = 'block';
+	}
 });
 
 btnReset.addEventListener('click', resetAllInput);

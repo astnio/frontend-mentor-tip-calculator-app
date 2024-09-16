@@ -139,8 +139,14 @@
 				<div class="frm-people-amount-container">
 					<label
 						class="input-legend"
+						id="people-amount-legend"
 						for="people-amount">
-						Number of People
+						<p>Number of People</p>
+						<p
+							class="people-amount-error-message"
+							style="display: none">
+							Can't be zero
+						</p>
 					</label>
 					<span class="input-legend-icon"
 						><img
@@ -153,6 +159,7 @@
 						id="people-amount"
 						type="number"
 						step="1"
+						min="1"
 						placeholder="0" />
 				</div>
 			</form>

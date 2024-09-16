@@ -25,6 +25,8 @@ p {
 	--clr-primary: hsl(172, 67%, 45%);
 	--clr-hover: #9ee7de;
 
+	--clr-error: rgb(223, 126, 91);
+
 	--clr-white: hsl(0, 0%, 100%);
 
 	--clr-cyan-400: hsl(183, 100%, 15%);
@@ -248,6 +250,15 @@ input.frm-tip-choice-input-custom[type='number'] {
 	flex-direction: column;
 }
 
+.people-amount-error-message {
+	color: var(--clr-error);
+}
+
+#people-amount-legend {
+	display: flex;
+	justify-content: space-between;
+}
+
 .input-legend-icon {
 	position: absolute;
 	left: 0.6rem;
@@ -274,6 +285,10 @@ input.frm-tip-choice-input-custom[type='number'] {
 
 .number-input::placeholder {
 	color: var(--clr-cyan-200);
+}
+
+.number-input.input-error {
+	outline: solid 2px var(--clr-error);
 }
 
 /*** Output ***/
