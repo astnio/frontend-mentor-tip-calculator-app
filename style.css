@@ -83,6 +83,7 @@ form#tip-form {
 }
 
 .frm-bill-amount-container {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 }
@@ -232,10 +233,6 @@ input.frm-tip-choice-input-custom[type='number'] {
 	color: var(--clr-cyan-300);
 }
 
-/* .frm-tip-custom-input-container:has(.has-value) > .frm-tip-custom-choice-label {
-	appearance: none;
-} */
-
 /*** Form --- Other ***/
 
 .input-legend {
@@ -246,21 +243,37 @@ input.frm-tip-choice-input-custom[type='number'] {
 }
 
 .frm-people-amount-container {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 }
 
+.input-legend-icon {
+	position: absolute;
+	left: 0.6rem;
+	top: 1.84rem;
+}
+
 .number-input {
+	display: flex;
+	align-items: end;
+
 	border: none;
 	border-radius: var(--border-radius-input);
 
 	background-color: var(--clr-cyan-50);
 	padding: 0.2rem;
 
+	text-align: right;
+
 	font-size: 1rem;
 	font-family: 'Space Mono', monospace;
 	font-weight: 700;
 	color: var(--clr-cyan-400);
+}
+
+.number-input::placeholder {
+	color: var(--clr-cyan-200);
 }
 
 /*** Output ***/
